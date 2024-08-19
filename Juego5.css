@@ -1,0 +1,110 @@
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    color: #fff;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* Estilo para el título */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #030303;
+    text-shadow: 2px 2px #ffffff;
+}
+
+/* Estilo para el contenedor del juego */
+.memory-game {
+    width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    border: 5px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    background-color:white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para las cartas */
+.memory-card {
+    width: calc(25% - 10px);
+    height: 150px;
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+/* Estilo para las imágenes y contenido dentro de las cartas */
+.memory-card img,
+.memory-card .front-face,
+.memory-card .back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para la cara frontal de la carta */
+.front-face {
+    background-color: #72705b;
+    color: #1f143d;
+    transform: rotateY(180deg);
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+/* Estilo para la cara trasera de la carta */
+.back-face {
+    background-image: url('../img/js-badge.svgim'); /* Ruta a la imagen de la cara trasera */
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
+}
+
+/* Efecto hover para las cartas */
+.memory-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Transiciones suaves para las cartas */
+.memory-card img,
+.memory-card .front-face,
+.memory-card .back-face {
+    transition: all 0.3s ease;
+}
+
+/* Mejora del texto dentro de las cartas */
+.front-face {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #1f143d;
+    background-color: #8b8a76;
+    border-radius: 10px;
+}
+
